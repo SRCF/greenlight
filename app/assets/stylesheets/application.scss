@@ -30,29 +30,30 @@
  *= require_self
  */
 
-@import "tabler/variables";
-@import "bootstrap";
-@import "jquery-ui/sortable";
-@import "tabler-custom";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "monolith.min.scss";
-@import "bootstrap-select.min";
+@import 'tabler/variables';
+@import 'bootstrap';
+@import 'jquery-ui/sortable';
+@import 'tabler-custom';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'monolith.min.scss';
+@import 'bootstrap-select.min';
 
-@import "utilities/variables";
-@import "admins";
-@import "main";
-@import "rooms";
-@import "sessions";
-@import "utilities/fonts";
-@import "users";
+@import 'utilities/variables';
+@import 'admins';
+@import 'main';
+@import 'rooms';
+@import 'sessions';
+@import 'utilities/fonts';
+@import 'users';
 
 * {
   outline: none !important;
 }
 
-html, body {
-  font-family: "Source Sans Pro" !important;
+html,
+body {
+  font-family: 'D-DIN', 'Source Sans Pro' !important;
   position: relative;
   width: 100%;
   height: 100%;
@@ -142,7 +143,7 @@ a {
 }
 
 input:focus {
-    border-color: $primary !important;
+  border-color: $primary !important;
 }
 
 .list-group-item-action.active {
@@ -172,7 +173,7 @@ table {
   }
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
 
