@@ -269,6 +269,7 @@ en:
     submit: Submit
   go_back: Go back
   greenlight: Timeout
+  srcf: the SRCF
   header:
     all_recordings: All Recordings
     dropdown:
