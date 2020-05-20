@@ -293,7 +293,7 @@ en:
     search:
       start: Start searching...
   landing:
-    about: '%{href} is a free multipurpose video conferencing platform for the entire University of Cambridge community. You can create your own rooms to host sessions, or join others using a short and convenient link.'
+    about: '%{href} is a free multipurpose video conferencing platform for the entire University of Cambridge community. You can create your own rooms to host sessions, or join others using a short and convenient link. The front-end (what you are seeing right now) used to manage sessions is called Greenlight.'
     welcome: Welcome to Timeout!
     video: Watch this tutorial on using Greenlight
     upgrade: Show me how to upgrade to 2.0!
