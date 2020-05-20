@@ -177,7 +177,7 @@ en:
         username: Username
       title: Manage Users
   add_to_google_calendar: 'Add to Google Calendar'
-  bigbluebutton: BigBlueButton
+  bigbluebutton: Timeout by SRCF
   bigbluebutton_exception: Oops, there was an error when starting the meeting!
   cancel: Cancel
   cookies:
