@@ -5,6 +5,10 @@
 !Status](https://coveralls.io/repos/github/bigbluebutton/greenlight/badge.svg?branch=master)
 ![Docker Pulls](https://img.shields.io/docker/pulls/bigbluebutton/greenlight.svg)
 
+# Note for SRCF:
+
+To update Greenlight, merge master into our branch `srcf`. To make any changes, push to the `srcf` branch. The ansible playbook downloads from this.
+
 Greenlight is a simple front-end interface for your BigBlueButton server. At it's heart, Greenlight provides a minimalistic web-based application that allows users to:
 
   * Signup/Login with Google, Office365, or through the application itself.
