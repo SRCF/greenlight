@@ -20,7 +20,7 @@ en:
   activerecord:
     attributes:
       user:
-        accepted_terms: "Terms and Conditions"
+        accepted_terms: 'Terms and Conditions'
         email: Email
         name: Name
         password: Password
@@ -94,7 +94,7 @@ en:
       demoted: User has been successfully demoted
       invite: Invite successfully sent to %{email}
       invite_email_verification: Emails must be enabled in order to use this method. Please contact your system administrator.
-      merge_fail: There was an issue merging the user accounts. Please check the users selected and try again 
+      merge_fail: There was an issue merging the user accounts. Please check the users selected and try again
       merge_success: User accounts merged successfully
       perm_deleted: User has been permanently deleted
       promoted: User has been successfully promoted
@@ -124,7 +124,7 @@ en:
       edit_site_settings: Allow users with this role to edit site settings
       edit_roles: Allow users with this role to edit other roles
       manage_users: Allow users with this role to manage users
-      invalid_assignment: There was a problem assigning the roles to the user. Please check the values and try again 
+      invalid_assignment: There was a problem assigning the roles to the user. Please check the values and try again
       colour:
         title: Role Colour
         info: Set the colour that will be associated with the role
@@ -176,7 +176,7 @@ en:
         uid: User ID
         username: Username
       title: Manage Users
-  add_to_google_calendar: "Add to Google Calendar"
+  add_to_google_calendar: 'Add to Google Calendar'
   bigbluebutton: BigBlueButton
   bigbluebutton_exception: Oops, there was an error when starting the meeting!
   cancel: Cancel
@@ -186,7 +186,22 @@ en:
   copied: Copied
   copy: Copy
   date:
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    month_names:
+      [
+        ~,
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December,
+      ]
   default_admin: You are still using the default password for this account. Please click <a href="%{edit_link}">here</a> to change it
   delete: Delete
   delivery_error: An error occured during email delivery. Please contact an administrator!
@@ -247,12 +262,13 @@ en:
     authentication: User Authentication
   footer:
     powered_by: Powered by %{href}.
+    brought_to_life: Brought to life by %{href}.
   forgot_password:
     subtitle: Forgot Password
     email: Email
     submit: Submit
   go_back: Go back
-  greenlight: Greenlight
+  greenlight: Timeout
   header:
     all_recordings: All Recordings
     dropdown:
@@ -265,7 +281,7 @@ en:
   info_update_success: Information successfully updated.
   invalid_credentials: The email and password you entered did not match our records. Try again or click Forgot Password to reset your password.
   invalid_login_method: Login failed due to account mismatch. You need to log in with omniauth.
-  invite_message: "To invite someone to the meeting, send them this link:"
+  invite_message: 'To invite someone to the meeting, send them this link:'
   javascript:
     room:
       mailer:
@@ -276,9 +292,9 @@ en:
     search:
       start: Start searching...
   landing:
-    about: "%{href} is a simple front-end for your BigBlueButton open-source web conferencing server. You can create your own rooms to host sessions, or join others using a short and convenient link."
-    welcome: Welcome to BigBlueButton.
-    video: Watch our tutorial on using Greenlight
+    about: '%{href} is a free multipurpose video conferencing platform for the entire University of Cambridge community. You can create your own rooms to host sessions, or join others using a short and convenient link.'
+    welcome: Welcome to Timeout!
+    video: Watch this tutorial on using Greenlight
     upgrade: Show me how to upgrade to 2.0!
     version: We've released a new version of Greenlight, but your database isn't compatible.
   language_default: Default (browser language)
@@ -303,7 +319,7 @@ en:
         info: You are no longer an %{role} on %{url}.
         more-info: You now have the same privileges as a regular user.
         root_link: Sign In
-        subtitle: "%{role} Rights Rescinded"
+        subtitle: '%{role} Rights Rescinded'
       invite:
         info: You have been invited to your own personal space by %{name}
         signup_info: To signup using your email, click the button below and follow the steps.
@@ -326,7 +342,7 @@ en:
         admins_link: Visit the Organization Page
         info: You are now an %{role} on %{url}.
         more-info: To view your new abilities please visit %{url}.
-        subtitle: "%{role} Rights Granted"
+        subtitle: '%{role} Rights Granted'
       verify_email:
         welcome: Welcome to your personal space, %{name}!
         success: Leveraging %{bigbluebutton}, you can create your own rooms to host sessions and collaborate with others.
@@ -409,12 +425,12 @@ en:
   name_update_success: Room name successfully changed!
   no_user_email_exists: There is no existing user with the email specified. Please make sure you typed it correctly.
   omniauth_error: An error occured while authenticating with omniauth. Please try again or contact an administrator!
-  omniauth_specific_error: "%{error} occured while authenticating with omniauth. Please try again or contact an administrator!"
+  omniauth_specific_error: '%{error} occured while authenticating with omniauth. Please try again or contact an administrator!'
   pagy:
     nav:
-      prev: "&lsaquo; Prev"
-      next: "Next &rsaquo;"
-      gap: "&hellip;"
+      prev: '&lsaquo; Prev'
+      next: 'Next &rsaquo;'
+      gap: '&hellip;'
   password: Password
   password_empty_notice: Password cannot be empty.
   password_reset_success: Password has been reset.
@@ -457,7 +473,7 @@ en:
       fail: Your account has not been approved yet. If multiples days have passed since you signed up, please contact your administrator.
       signup: Your account was successfully created. It has been sent to an administrator for approval.
     banned:
-      fail: You do not have access to this application. If you believe this is a mistake, please contact your administrator. 
+      fail: You do not have access to this application. If you believe this is a mistake, please contact your administrator.
     deprecated:
       new_signin: Select a new login method for you account. All your rooms from your old account will be migrated to the new account
       twitter_signin: Signing in via Twitter has been deprecated and will be removed in the next release. Click <a href="%{link}"> here </a> to move your account to a new authentication method
