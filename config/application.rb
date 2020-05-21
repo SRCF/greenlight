@@ -93,7 +93,7 @@ module Greenlight
     config.allow_user_signup = (ENV['ALLOW_GREENLIGHT_ACCOUNTS'] == "true")
 
     # Configure custom banner message.
-    config.banner_message = ENV['BANNER_MESSAGE']
+    config.banner_message = ENV['BANNER_MESSAGE'] || "Timeout is currently in beta (testing) phase. Ch"
 
     # Enable/disable recording thumbnails.
     config.recording_thumbnails = (ENV['RECORDING_THUMBNAILS'] != "false")
