@@ -26,6 +26,9 @@ OmniAuth.config.logger = Rails.logger
 
 # Setup the Omniauth middleware.
 Rails.application.config.middleware.use OmniAuth::Builder do
+
+  logger.info ENV['KEY_ID']
+
   Rails.application.config.providers << :ucamraven
   provider :ucamraven, ENV['KEY_ID'], ENV['KEY_PATH'], 
     setup: SETUP_PROC
