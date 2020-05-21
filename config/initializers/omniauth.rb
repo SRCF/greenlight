@@ -16,6 +16,7 @@ Rails.application.config.omniauth_twitter = ENV['TWITTER_ID'].present? && ENV['T
 Rails.application.config.omniauth_google = ENV['GOOGLE_OAUTH2_ID'].present? && ENV['GOOGLE_OAUTH2_SECRET'].present?
 Rails.application.config.omniauth_office365 = ENV['OFFICE365_KEY'].present? &&
                                               ENV['OFFICE365_SECRET'].present?
+Rails.application.config.omniauth_ucamraven = true
 
 SETUP_PROC = lambda do |env|
   OmniauthOptions.omniauth_options env
