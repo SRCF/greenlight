@@ -256,10 +256,10 @@ en:
   expired_reset_token: Password reset link has expired!
   features:
     title: Features
-    rooms: Personalized Rooms
-    recordings: Recording Management
-    designs: Custom Designs
-    authentication: User Authentication
+    rooms: Breakout rooms
+    recordings: Recording sessions
+    designs: Share YouTube videos
+    authentication: Free and fast
   footer:
     powered_by: Powered by %{href}.
     brought_to_life: Brought to life by %{href}.

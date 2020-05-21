@@ -9,17 +9,17 @@ services:
     restart: unless-stopped
     ports:
       - 127.0.0.1:5000:80
-# When using external logging
-#    logging:
-#      driver: $LOG_DRIVER
-#      options:
-#        syslog-address: $LOG_ADDRESS
-#        tag: $LOG_TAG
+    # When using external logging
+    #    logging:
+    #      driver: $LOG_DRIVER
+    #      options:
+    #        syslog-address: $LOG_ADDRESS
+    #        tag: $LOG_TAG
     volumes:
       - ./log:/usr/src/app/log
-# When using sqlite3 as the database
-#      - ./db/production:/usr/src/app/db/production
-# When using postgresql as the database
+    # When using sqlite3 as the database
+    #      - ./db/production:/usr/src/app/db/production
+    # When using postgresql as the database
     links:
       - db
   db:
@@ -29,6 +29,7 @@ services:
       - 127.0.0.1:5432:5432
     volumes:
       - ./db/production:/var/lib/postgresql/data
+      - ./terms.md:/usr/src/app/config/terms.md
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
