@@ -24,7 +24,7 @@ module AuthValues
     case auth['provider']
     when :office365
       auth['info']['display_name']
-    when :ucamraven
+    when :"ucamraven"
       auth['uid']
     else
       auth['info']['name']
