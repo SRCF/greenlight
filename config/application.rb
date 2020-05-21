@@ -93,7 +93,7 @@ module Greenlight
     config.allow_user_signup = (ENV['ALLOW_GREENLIGHT_ACCOUNTS'] == "true")
 
     # Configure custom banner message.
-    config.banner_message = ENV['BANNER_MESSAGE'] || "Timeout is currently in beta (testing) phase. Ch"
+    config.banner_message = ENV['BANNER_MESSAGE'] || "Timeout is currently in <strong>beta phase</strong>.  Please help us polish things by <a target="_blank" href="https://docs.srcf.net/timeout/getting-started#reporting-problems-and-getting-help%22%3Ereporting problems</a> to us."
 
     # Enable/disable recording thumbnails.
     config.recording_thumbnails = (ENV['RECORDING_THUMBNAILS'] != "false")
