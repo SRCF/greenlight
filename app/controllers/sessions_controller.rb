@@ -152,7 +152,7 @@ class SessionsController < ApplicationController
       process_signin
     rescue => e
       logger.error "Support: Error authenticating via omniauth: #{e}"
-      omniauth_fail
+      omnifail
     end
   end
 

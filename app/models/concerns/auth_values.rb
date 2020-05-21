@@ -24,6 +24,8 @@ module AuthValues
     case auth['provider']
     when :office365
       auth['info']['display_name']
+    when :ucamraven
+      auth['uid']
     else
       auth['info']['name']
     end
@@ -33,6 +35,8 @@ module AuthValues
     case auth['provider']
     when :google
       auth['info']['email'].split('@').first
+    when :ucamraven
+      auth['uid']
     when :bn_launcher
       auth['info']['username']
     else
@@ -51,6 +55,8 @@ module AuthValues
     when :ldap
       return auth['info']['image'] if auth['info']['image']&.starts_with?("http")
       ""
+    when :ucamraven
+      return ""
     else
       auth['info']['image']
     end
