@@ -32,9 +32,7 @@ class SessionsController < ApplicationController
 
     @providers = configured_providers
 
-    logger.info env['omniauth.strategy']
-
-    logger.info Rails.configuration.providers
+    logger.info @configured_providers
 
     if one_provider
       provider_path = if Rails.configuration.omniauth_ldap
