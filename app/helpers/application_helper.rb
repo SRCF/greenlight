@@ -29,7 +29,7 @@ module ApplicationHelper
     providers
   end
 
-  # Generates the login URL for a specific provider.
+  # Generates the login URL for a specific .
   def omniauth_login_url(provider)
     if provider == :ldap
       ldap_signin_path
