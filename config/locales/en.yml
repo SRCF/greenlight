@@ -257,8 +257,8 @@ en:
   features:
     title: Features
     rooms: Breakout rooms
-    recordings: Recording sessions
-    designs: Share YouTube videos
+    recordings: Session recording
+    designs: Interactive polls
     authentication: Free and fast
   footer:
     powered_by: Powered by %{href}.

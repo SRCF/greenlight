@@ -34,6 +34,7 @@ module AuthValues
       uri = URI.parse("https://lookup-test.csx.cam.ac.uk/api/v1/person/crsid/" + auth['uid'])
       # Make the connection
       http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
       # Create a request object
       request = Net::HTTP::Get.new(uri.request_uri)
       # Set the JSON header
@@ -41,7 +42,7 @@ module AuthValues
       # Send the request
       response = http.request(request)
 
-      if response.code != 200
+      if response.code != "200"
         auth['uid']
       else 
         json_response = JSON.parse(response.body)
