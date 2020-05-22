@@ -16,6 +16,10 @@
 # You should have received a copy of the GNU Lesser General Public License along
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
+require 'net/http'
+require 'uri'
+require 'json'
+
 module AuthValues
   extend ActiveSupport::Concern
 
@@ -25,9 +29,25 @@ module AuthValues
     when :office365
       auth['info']['display_name']
     when "ucamraven"
-      # need LDAP integration
-      auth['uid']
-    else
+
+      # Try and find the user's name through the Lookup API
+      uri = URI.parse("https://lookup-test.csx.cam.ac.uk/api/v1/person/crsid/" + auth['uid'])
+      # Make the connection
+      http = Net::HTTP.new(uri.host, uri.port)
+      # Create a request object
+      request = Net::HTTP::Get.new(uri.request_uri)
+      # Set the JSON header
+      request["Accept"] = "application/json"
+      # Send the request
+      response = http.request(request)
+
+      if response.code != 200
+        auth['uid']
+      else 
+        json_response = JSON.parse(response.body)
+        json_response["result"]["person"]["displayName"]
+  
+      else
       auth['info']['name']
     end
   end
