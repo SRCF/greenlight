@@ -86,6 +86,20 @@ $(document).on('turbolinks:load', function(){
       displaySharedUsers($(this).data("users-path"))
     })
 
+    // Add ability to control room access
+
+    $(".access-control").click(function() {
+      // Update the path of save button
+      $("#save-access-control").attr("data-path", $(this).data("path"))
+
+      // Get list of users shared with and display them
+      displaySharedUsers($(this).data("users-path"))
+    })
+
+    $("#accessControlModal").on("show.bs.modal", function() {
+      $(".selectpicker").selectpicker('val','')
+    })
+
     $("#shareRoomModal").on("show.bs.modal", function() {
       $(".selectpicker").selectpicker('val','')
     })

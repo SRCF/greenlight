@@ -36,7 +36,7 @@ en:
         enabled: Enabled
         info: Only allow authenticated users to join a room
         title: Require Authentication for Rooms
-        user-info: You must sign in to Greenlight to join this room
+        user-info: You must sign in to Timeout to join this room
       branding:
         change: Change Image
         info: Change the branding image that appears in the top left corner
@@ -531,7 +531,8 @@ en:
     room_limit_exceeded: You have exceeded the number of rooms allowed. Please delete %{difference} room(s) to access this room.
     sessions: Sessions
     settings: Room Settings
-    share: Manage Access
+    share: Share Room
+    access_control: Access Control
     shared_by: Shared by %{email}
     remove_shared_access_success: Successfully removed shared room from your room list
     remove_shared_access_error: There was an error removing the shared room from your list
