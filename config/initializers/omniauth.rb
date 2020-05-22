@@ -69,7 +69,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       Rails.application.config.providers << :ucamraven
       opts = ENV['RAVEN_DESC'].present? ? {desc: ENV['RAVEN_DESC']} : {}
       provider :ucamraven, ENV['KEY_ID'].to_i, ENV['KEY_PATH'], opts
-      setup: SETUP_PROC
+        setup: SETUP_PROC
     end
 
   end
