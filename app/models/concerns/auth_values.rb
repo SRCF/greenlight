@@ -24,6 +24,9 @@ module AuthValues
     case auth['provider']
     when :office365
       auth['info']['display_name']
+    when "ucamraven"
+      # need LDAP integration
+      auth['uid']
     else
       auth['info']['name']
     end
@@ -35,6 +38,8 @@ module AuthValues
       auth['info']['email'].split('@').first
     when :bn_launcher
       auth['info']['username']
+    when "ucamraven"
+      auth['uid']
     else
       auth['info']['nickname']
     end
@@ -51,6 +56,8 @@ module AuthValues
     when :ldap
       return auth['info']['image'] if auth['info']['image']&.starts_with?("http")
       ""
+    when "ucamraven"
+      return ""
     else
       auth['info']['image']
     end

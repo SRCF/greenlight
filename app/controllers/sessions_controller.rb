@@ -32,6 +32,10 @@ class SessionsController < ApplicationController
 
     @providers = configured_providers
 
+    # Add log for Raven auth
+    
+    logger.info "User has authenticated via Raven"
+
     if one_provider
       provider_path = if Rails.configuration.omniauth_ldap
         ldap_signin_path
