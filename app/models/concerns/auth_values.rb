@@ -31,7 +31,7 @@ module AuthValues
     when "ucamraven"
 
       # Try and find the user's name through the Lookup API
-      uri = URI.parse("https://lookup-test.csx.cam.ac.uk/api/v1/person/crsid/" + auth['uid'])
+      uri = URI.parse("https://lookup.cam.ac.uk/api/v1/person/crsid/" + auth['uid'])
       # Make the connection
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -46,7 +46,7 @@ module AuthValues
         auth['uid']
       else 
         json_response = JSON.parse(response.body)
-        json_response["result"]["person"]["displayName"]
+        json_response["result"]["person"]["visibleName"]
       end
   
     else
