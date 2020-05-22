@@ -46,8 +46,9 @@ module AuthValues
       else 
         json_response = JSON.parse(response.body)
         json_response["result"]["person"]["displayName"]
+      end
   
-      else
+    else
       auth['info']['name']
     end
   end
