@@ -263,8 +263,8 @@ en:
     designs: Interactive polls
     authentication: Free and fast
   footer:
-    powered_by: Powered by %{href}.
-    brought_to_life: Brought to life by %{href}.
+    powered_by: Powered by %{href},
+    brought_to_life: brought to life by %{href}.
   forgot_password:
     subtitle: Forgot Password
     email: Email
