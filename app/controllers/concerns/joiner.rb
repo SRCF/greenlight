@@ -84,7 +84,7 @@ module Joiner
   # Default, unconfigured meeting options.
   def default_meeting_options
     invite_msg = I18n.t("invite_message")
-    is_room_recording = @room.recording? ? "<span style="text-danger">This room has recording enabled</span>" : "<span class="text-danger">This room does not have recording enabled</span>"
+    is_room_recording = @room.recording? ? "<span style=\"text-danger\">this room has recording enabled</span>" : "<span class=\"text-danger\">this room does not have recording enabled</span>"
     {
       user_is_moderator: false,
       meeting_logout_url: request.base_url + logout_room_path(@room),
