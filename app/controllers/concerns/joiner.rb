@@ -84,12 +84,12 @@ module Joiner
   # Default, unconfigured meeting options.
   def default_meeting_options
     invite_msg = I18n.t("invite_message")
-    is_room_recording = @room.recording? ? "<span style=\"color:red\">this room has recording enabled.</span>" : "<span style=\"color:red\">this room does not have recording enabled.</span>"
+    recording_msg = @room.recording? ? "<span style=\"color:red\">#{I18n.t("room_recording.enabled")}</span>\n\n#{I18n.t("room_recording.how_to_disable")}" : "<span style=\"color:red\">#{I18n.t("room_recording.disabled")}</span>\n\n#{I18n.t("room_recording.how_to_enable")}"
     {
       user_is_moderator: false,
       meeting_logout_url: request.base_url + logout_room_path(@room),
       meeting_recorded: @room.recording?,
-      moderator_message: "Please note: #{is_room_recording}<br><br>\n\n#{invite_msg}\n\n#{request.base_url + room_path(@room)}",
+      moderator_message: "#{is_room_recording}<br><br>\n\n#{invite_msg}\n\n#{request.base_url + room_path(@room)}",
       host: request.host,
       recording_default_visibility: @settings.get_value("Default Recording Visibility") == "public"
     }
