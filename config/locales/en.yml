@@ -286,7 +286,7 @@ en:
   invalid_login_method: Login failed due to account mismatch. You need to log in with omniauth.
   invite_message: 'To invite someone to the meeting, send them this link:'
   room_recording: 
-    disabled: Recording isn't available for this session.
+    disabled: Recording is not available for this session.
     enabled: Recording is available for this session.
     how_to_enable: You may enable it by ending this meeting and changing it under room settings.
     how_to_disable: You may disable it by ending this meeting and changing it under room settings.
