@@ -264,6 +264,8 @@ en:
     authentication: Free and fast
   footer:
     powered_by: Powered by %{href},
+    separator: " | %{href}"
+    privacy: Terms of Service and Privacy Policy
     brought_to_life: brought to life by %{href}.
   forgot_password:
     subtitle: Forgot Password
@@ -287,7 +289,7 @@ en:
   invite_message: 'To invite someone to the meeting, send them this link:'
   room_recording: 
     disabled: Recording is not available for this session.
-    enabled: Recording is available for this session.
+    enabled: Recording is available for this session. Please note it might take a while for recordings to become available to you.
     how_to_enable: You may enable it by ending this meeting and changing it under room settings.
     how_to_disable: You may disable it by ending this meeting and changing it under room settings.
   javascript:
@@ -414,7 +416,7 @@ en:
       mute: Mute users when they join
       require_approval: Require moderator approval before joining
       start: Allow any user to start this meeting
-      footer_text: Adjustment to your room can be done at anytime.
+      footer_text: Adjustment to your room can be done while it is not in session.
       recording: Record sessions
       session_active: Active session
     rename_room:
