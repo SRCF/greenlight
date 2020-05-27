@@ -84,7 +84,12 @@ module Joiner
   # Default, unconfigured meeting options.
   def default_meeting_options
     invite_msg = I18n.t("invite_message")
-    recording_msg = @room.recording? ? "<span style=\"color:red\">#{I18n.t("room_recording.enabled")}</span>\n\n#{I18n.t("room_recording.how_to_disable")}" : "<span style=\"color:red\">#{I18n.t("room_recording.disabled")}</span>\n\n#{I18n.t("room_recording.how_to_enable")}"
+    recording_msg = ""
+    if @room.recording?
+      recording_msg = "<span style=\"color:red\">#{I18n.t("room_recording.enabled")}</span>\n\n#{I18n.t("room_recording.how_to_disable")}\n\n#{I18n.t("room_recording.info")}<a href=\"https://docs.srcf.net/timeout/tos.html#web-conferencing-system\" target=\"_blank\">#{I18n.t("room_recording.click_here")}</a>"
+    else
+      recording_msg = "<span style=\"color:red\">#{I18n.t("room_recording.disabled")}</span>\n\n#{I18n.t("room_recording.how_to_enable")}\n\n#{I18n.t("room_recording.info")}<a href=\"https://docs.srcf.net/timeout/tos.html#web-conferencing-system\" target=\"_blank\">#{I18n.t("room_recording.click_here")}</a>"
+    end
     {
       user_is_moderator: false,
       meeting_logout_url: request.base_url + logout_room_path(@room),
