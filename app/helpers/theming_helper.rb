@@ -29,7 +29,7 @@ module ThemingHelper
 
   # Returns the logo based on user's provider
   def privpolicy_url
-    @settings.get_value("Privacy Policy URL") || ""
+    @settings.get_value("Privacy Policy URL") || Rails.configuration.privpolicy_url_default
   end
 
   # Returns the primary color based on user's provider

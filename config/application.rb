@@ -131,7 +131,13 @@ module Greenlight
     # DEFAULTS
 
     # Default branding image if the user does not specify one
-    config.branding_image_default = "https://raw.githubusercontent.com/srcf/greenlight/srcf/app/assets/images/logo_with_text.png"
+    config.branding_image_default = "https://www.srcf.net/_srcf/timeout.svg"
+
+    # Default legal URL used
+    # config.branding_image_default = "https://www.srcf.net/_srcf/timeout.svg"
+
+    # Default privacy policy URL
+    config.privpolicy_url_default = "https://docs.srcf.net/timeout/tos.html"
 
     # Default primary color if the user does not specify one
     config.primary_color_default = "#007bff"

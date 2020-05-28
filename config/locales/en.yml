@@ -558,6 +558,7 @@ en:
       title: Join a Room
     no_sessions: This room has no sessions, yet!
     recordings: Room Recordings
+    need_to_wait: Please note your recordings will not appear here instantly and the delay will be longer than the duration of your meeting.
     room_limit: You have reached the maximum number of rooms allowed
     room_limit_exceeded: You have exceeded the number of rooms allowed. Please delete %{difference} room(s) to access this room.
     sessions: Sessions
