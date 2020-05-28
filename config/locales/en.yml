@@ -264,8 +264,6 @@ en:
     authentication: Free and fast
   footer:
     powered_by: Powered by %{href},
-    separator: " | %{href}"
-    privacy: Terms of Service and Privacy Policy
     brought_to_life: brought to life by %{href}.
   forgot_password:
     subtitle: Forgot Password
