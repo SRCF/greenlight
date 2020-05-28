@@ -89,6 +89,8 @@ class Room < ApplicationRecord
 
   def recording?
     settings_hash["recording"]
+  end
+  
   # Return table with the running rooms first
   def self.order_by_status(table, ids)
     return table if ids.blank?
@@ -129,4 +131,5 @@ class Room < ApplicationRecord
       break bbb_id unless Room.exists?(bbb_id: bbb_id)
     end
   end
+
 end
