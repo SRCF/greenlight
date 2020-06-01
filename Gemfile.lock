@@ -186,7 +186,7 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
-    omniauth-ucam-raven (1.0.1)
+    omniauth-ucam-raven (2.0.0)
       omniauth (~> 1.0)
     pagy (3.8.1)
     parallel (1.19.1)
@@ -364,7 +364,7 @@ DEPENDENCIES
   omniauth-bn-office365 (~> 0.1.1)
   omniauth-google-oauth2
   omniauth-twitter
-  omniauth-ucam-raven
+  omniauth-ucam-raven (~> 2.0)
   pagy
   pg (~> 0.18)
   puma (~> 3.12)

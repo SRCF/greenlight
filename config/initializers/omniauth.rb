@@ -66,9 +66,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     end
 
     if Rails.configuration.omniauth_ucamraven
+      key_data = [[ENV['KEY_ID'], ENV['KEY_PATH']]]
       Rails.application.config.providers << :ucamraven
-      provider :ucamraven, ENV['KEY_ID'].to_i, ENV['KEY_PATH'], :desc => ENV['RAVEN_DESC'],
-        setup: SETUP_PROC
+      provider :ucamraven, key_data, desc: ENV['RAVEN_DESC'], setup: SETUP_PROC
     end
 
   end
