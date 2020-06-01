@@ -28,6 +28,8 @@ module AuthValues
     uri = URI.parse("https://www.lookup.cam.ac.uk/api/v1/person/crsid/#{auth['uid']}?fetch=email")
     # make the connection
     http = Net::HTTP.new(uri.host, uri.port)
+    http.read_timeout = 5
+    http.open_timeout = 5
     http.use_ssl = true
     # create a request object
     request = Net::HTTP::Get.new(uri.request_uri)
@@ -39,16 +41,17 @@ module AuthValues
 
   def set_lookup_values(u, response, auth)
     # did the response fail? fall back to defaults
+    # overwrite name and email each time
     if response.code != "200"
       u.name = auth['uid']
-      u.email = auth['info']['email']
+      u.email = ""
     else
       json_response = JSON.parse(response.body)["result"]
       u.name = json_response["person"]["visibleName"]
       email_test = json_response["attributes"][0]
-      u.email = email_test.present? email_test["value"] : "#{auth['uid']}@cantab.ac.uk"
+      u.email = email_test.present? email_test["value"] : ""
     end
-    u.username = auth['uid']
+    u.username = auth['uid'] unless u.username
     u.image = ""
   end
   

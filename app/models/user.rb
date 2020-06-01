@@ -66,7 +66,7 @@ class User < ApplicationRecord
         auth_roles(u, auth)
         if provider == 'ucamraven'
           response = perform_lookup(auth) 
-          parse_raven_response(u, response, auth)
+          set_lookup_values(u, response, auth)
         end
         u.email_verified = true
         u.save!
