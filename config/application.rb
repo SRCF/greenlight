@@ -131,7 +131,7 @@ module Greenlight
     # DEFAULTS
 
     # Default branding image if the user does not specify one
-    config.branding_image_default = "https://www.srcf.net/_srcf/timeout.svg"
+    config.branding_image_default = "https://www.srcf.net/images/timeout.svg"
 
     # Default legal URL used
     # config.branding_image_default = "https://www.srcf.net/_srcf/timeout.svg"

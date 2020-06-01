@@ -279,7 +279,7 @@ en:
     authentication: Free and fast
   footer:
     powered_by: Powered by %{href},
-    brought_to_life: brought to life by %{href}.
+    brought_to_life: brought to life by %{href}
     legal: Legal
     privpolicy: Privacy Policy
   forgot_password:
