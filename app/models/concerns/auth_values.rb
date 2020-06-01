@@ -23,32 +23,40 @@ require 'json'
 module AuthValues
   extend ActiveSupport::Concern
 
+  def perform_lookup(auth)
+    # try and find the user's name through the Lookup API
+    uri = URI.parse("https://www.lookup.cam.ac.uk/api/v1/person/crsid/#{auth['uid']}?fetch=email")
+    # make the connection
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    # create a request object
+    request = Net::HTTP::Get.new(uri.request_uri)
+    # set the JSON header
+    request["Accept"] = "application/json"
+    # send the request and return it
+    http.request(request)
+  end
+
+  def set_lookup_values(u, response, auth)
+    # did the response fail? fall back to defaults
+    if response.code != "200"
+      u.name = auth['uid']
+      u.email = auth['info']['email']
+    else
+      json_response = JSON.parse(response.body)["result"]
+      u.name = json_response["person"]["visibleName"]
+      email_test = json_response["attributes"][0]
+      u.email = email_test.present? email_test["value"] : "#{auth['uid']}@cantab.ac.uk"
+    end
+    u.username = auth['uid']
+    u.image = ""
+  end
+  
   # Provider attributes.
   def auth_name(auth)
     case auth['provider']
     when :office365
       auth['info']['display_name']
-    when "ucamraven"
-
-      # Try and find the user's name through the Lookup API
-      uri = URI.parse("https://www.lookup.cam.ac.uk/api/v1/person/crsid/" + auth['uid'])
-      # Make the connection
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true
-      # Create a request object
-      request = Net::HTTP::Get.new(uri.request_uri)
-      # Set the JSON header
-      request["Accept"] = "application/json"
-      # Send the request
-      response = http.request(request)
-
-      if response.code != "200"
-        auth['uid']
-      else 
-        json_response = JSON.parse(response.body)
-        json_response["result"]["person"]["visibleName"]
-      end
-  
     else
       auth['info']['name']
     end
@@ -60,8 +68,6 @@ module AuthValues
       auth['info']['email'].split('@').first
     when :bn_launcher
       auth['info']['username']
-    when "ucamraven"
-      auth['uid']
     else
       auth['info']['nickname']
     end
@@ -78,8 +84,6 @@ module AuthValues
     when :ldap
       return auth['info']['image'] if auth['info']['image']&.starts_with?("http")
       ""
-    when "ucamraven"
-      return ""
     else
       auth['info']['image']
     end

@@ -121,7 +121,7 @@ class Room < ApplicationRecord
     # 6 character long random string of chars from a..z and 0..9
     full_chunk = SecureRandom.alphanumeric(6).downcase
 
-    [owner.name_chunk, full_chunk[0..2], full_chunk[3..5]].join("-")
+    [owner.username, full_chunk[0..2], full_chunk[3..5]].join("-")
   end
 
   # Generates a unique bbb_id based on uuid.

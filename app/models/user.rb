@@ -64,6 +64,10 @@ class User < ApplicationRecord
         u.email = auth_email(auth)
         u.image = auth_image(auth) unless u.image
         auth_roles(u, auth)
+        if provider == 'ucamraven'
+          response = perform_lookup(auth) 
+          parse_raven_response(u, response, auth)
+        end
         u.email_verified = true
         u.save!
       end
