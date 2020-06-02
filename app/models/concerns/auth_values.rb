@@ -44,12 +44,12 @@ module AuthValues
     # overwrite name and email each time
     if response.code != "200"
       u.name = auth['uid']
-      u.email = ""
+      u.email = "" unless u.email
     else
-      json_response = JSON.parse(response.body)["result"]
-      u.name = json_response["person"]["visibleName"]
-      email_test = json_response["attributes"][0]
-      u.email = email_test.present? email_test["value"] : ""
+      json_response = JSON.parse(response.body)["result"]["person"]
+      u.name = json_response["visibleName"]
+      email_test = json_response["attributes"].try(:first)
+      u.email = email_test.present? ? email_test["value"] : "" unless u.email
     end
     u.username = auth['uid'] unless u.username
     u.image = ""
