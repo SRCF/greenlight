@@ -25,7 +25,7 @@ module AuthValues
 
   def perform_lookup(auth)
     # try and find the user's name through the Lookup API
-    uri = URI.parse("https://www.lookup.cam.ac.uk/api/v1/person/crsid/#{auth['uid']}?fetch=email")
+    uri = URI.parse("https://www.lookup.cam.ac.uk/api/v1/person/crsid/#{auth['uid']}?fetch=email,departingEmail")
     # make the connection
     http = Net::HTTP.new(uri.host, uri.port)
     http.read_timeout = 5
