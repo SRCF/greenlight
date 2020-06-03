@@ -39,8 +39,6 @@ module Greenlight
     # Configure I18n localization.
     config.i18n.available_locales = [:en]
     config.i18n.default_locale = :en
-    config.i18n.enforce_available_locales = true
-    config.i18n.locale = :en
 
     # Check if a loadbalancer is configured.
     config.loadbalanced_configuration = ENV["LOADBALANCER_ENDPOINT"].present? && ENV["LOADBALANCER_SECRET"].present?
