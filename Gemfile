@@ -137,3 +137,5 @@ gem "recaptcha"
 gem 'i18n-language-mapping', '~> 0.1.1'
 
 gem 'omniauth-ucam-raven', '~> 2.0'
+
+gem 'omniauth_openid_connect'

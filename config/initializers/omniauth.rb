@@ -17,6 +17,7 @@ Rails.application.config.omniauth_google = ENV['GOOGLE_OAUTH2_ID'].present? && E
 Rails.application.config.omniauth_office365 = ENV['OFFICE365_KEY'].present? &&
                                               ENV['OFFICE365_SECRET'].present?
 Rails.application.config.omniauth_ucamraven = ENV['KEY_ID'].present? && ENV['KEY_PATH'].present?
+Rails.application.config.omniauth_openid_connect = ENV['OIDC_CLIENT_ID'].present? && ENV['OIDC_SECRET_KEY'].present?
 
 
 SETUP_PROC = lambda do |env|
@@ -69,6 +70,19 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       key_data = [[ENV['KEY_ID'].to_i, ENV['KEY_PATH']]]
       Rails.application.config.providers << :ucamraven
       provider :ucamraven, key_data, desc: ENV['RAVEN_DESC'], setup: SETUP_PROC
+    end
+
+    if Rails.configuration.omniauth_openid_connect
+      Rails.application.config.providers << :openid_connect
+      provider :openid_connect,
+          issuer: "https://cloudburst.srcf.net",
+          discovery: true,
+          scope: [:openid, :profile, :email],
+          response_type: "id_token",
+          client_options: {
+            scheme: "https",
+            host: "cloudburst.srcf.net",
+          }
     end
 
   end
