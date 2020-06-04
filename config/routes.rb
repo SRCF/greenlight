@@ -128,6 +128,7 @@ Rails.application.routes.draw do
     post '/start', to: 'rooms#start', as: :start_room
     get '/logout', to: 'rooms#logout', as: :logout_room
     post '/login', to: 'rooms#login', as: :login_room
+    patch '/share', to: 'rooms#share_files', as: :share_files
   end
 
   # Recording operations routes

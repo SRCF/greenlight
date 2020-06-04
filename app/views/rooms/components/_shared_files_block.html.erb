@@ -1,0 +1,58 @@
+<div class="sessions pb-5">
+  <div class="container pt-6">
+    <div class="row mt-2">
+      <div class="col-md-6">
+        <p class="subtitle">Shared Files</p>
+      </div>
+    </div>
+
+    <hr class="mt-0">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="table-responsive">
+            <table id="recordings-table" class="table table-hover table-outline table-vcenter text-nowrap card-table">
+              <thead>
+                <tr>
+                  <th>Filename</th>
+                  <th>Size</th>
+                </tr>
+              </thead>
+              <tbody id="recording-table">
+                <% @room.shared_files.each do |file| %>
+                  <tr>
+                    <td><%= file.filename %></td>
+                    <td><%= file.byte_size %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sessions pb-5">
+<div class="container pt-6">
+
+<%= form_with model: @room, url: share_files_path(@room), local: true do |form| %>
+  <div class="form-group row">
+    <%= form.label :files, class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= form.file_field :shared_files, multiple: true, direct_upload: true, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <%= form.submit 'Save', class: 'btn btn-outline-primary' %>
+    </div>
+  </div>
+<% end %>
+
+</div>
+</div>
+
+<% Rails.logger.level = 0 %>

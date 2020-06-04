@@ -36,3 +36,4 @@
 //= require pickr.min.js
 //= require bootstrap-select.min.js
 //= require_tree .
+//= require activestorage
