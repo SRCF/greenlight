@@ -23,7 +23,7 @@
                 <% @room.shared_files.each do |file| %>
                   <tr>
                     <td><%= file.filename %></td>
-                    <td><%= file.byte_size %></td>
+                    <td><%= number_to_human_size(file.byte_size) %></td>
                   </tr>
                 <% end %>
               </tbody>
