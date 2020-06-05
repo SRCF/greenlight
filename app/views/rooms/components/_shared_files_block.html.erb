@@ -22,7 +22,7 @@
               <tbody id="recording-table">
                 <% @room.shared_files.each do |file| %>
                   <tr>
-                    <td><%= file.filename %></td>
+                    <td><%= link_to(file.filename, url_for(file)) %></td>
                     <td><%= number_to_human_size(file.byte_size) %></td>
                   </tr>
                 <% end %>
