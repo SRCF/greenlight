@@ -22,7 +22,12 @@
               <tbody id="recording-table">
                 <% @room.shared_files.each do |file| %>
                   <tr>
-                    <td><%= link_to(file.filename, url_for(file)) %></td>
+                    <td>
+                      <span>
+                        <%= link_to(file.filename, url_for(file)) %>
+                        <i class="fa fa-clipboard ml-2 btn-file-share" data-file-share="<%= url_for(file) %>"></i>
+                      </span>
+                    </td>
                     <td><%= number_to_human_size(file.byte_size) %></td>
                   </tr>
                 <% end %>
