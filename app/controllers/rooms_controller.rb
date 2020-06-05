@@ -285,7 +285,7 @@ class RoomsController < ApplicationController
     redirect_to room_path(@room.uid)
   end
 
-  def share_files
+  def update_shared_files
     p = params.require(:room).permit(shared_files: [])
     @room.update!(p)
     redirect_to @room

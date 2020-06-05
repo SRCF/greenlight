@@ -24,8 +24,8 @@
                   <tr>
                     <td>
                       <span>
-                        <%= link_to(file.filename, url_for(file)) %>
-                        <i class="fa fa-clipboard ml-2 btn-file-share" data-file-share="<%= url_for(file) %>"></i>
+                        <%= link_to(file.filename, retrieve_shared_files_path(file.key)) %>
+                        <i class="fa fa-clipboard ml-2 btn-file-share" data-file-share="<%= retrieve_shared_files_path(file.key) %>"></i>
                       </span>
                     </td>
                     <td><%= number_to_human_size(file.byte_size) %></td>
@@ -43,7 +43,7 @@
 <div class="sessions pb-5">
 <div class="container pt-6">
 
-<%= form_with model: @room, url: share_files_path(@room), local: true do |form| %>
+<%= form_with model: @room, url: update_shared_files_room_path(@room), local: true do |form| %>
   <div class="form-group row">
     <%= form.label :files, class: 'col-sm-2 col-form-label' %>
     <div class="col-sm-10">

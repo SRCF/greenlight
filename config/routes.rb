@@ -128,7 +128,7 @@ Rails.application.routes.draw do
     post '/start', to: 'rooms#start', as: :start_room
     get '/logout', to: 'rooms#logout', as: :logout_room
     post '/login', to: 'rooms#login', as: :login_room
-    patch '/share', to: 'rooms#share_files', as: :share_files
+    patch '/share', to: 'rooms#update_shared_files', as: :update_shared_files_room
   end
 
   # Recording operations routes
@@ -140,6 +140,8 @@ Rails.application.routes.draw do
       delete '/', to: 'recordings#delete', as: :delete_recording
     end
   end
+
+  get '/share/:key', to: 'shared_files#retrieve', as: :retrieve_shared_files
 
   root to: 'main#index'
 end
