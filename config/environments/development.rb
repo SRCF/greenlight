@@ -30,7 +30,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :file_share
 
   # Don't wrap form components in field_with_error divs
   ActionView::Base.field_error_proc = proc do |html_tag|
