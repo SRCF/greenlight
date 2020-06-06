@@ -118,8 +118,11 @@ class SessionsController < ApplicationController
 
   # POST /auth/failure
   def omniauth_fail
-    if params[:message].nil?
+    case params[:message]
+    when nil
       redirect_to root_path, alert: I18n.t("omniauth_error")
+    when 'authentication_cancelled_by_user'
+      redirect_to root_path, info: 'Raven login declined gracefully. Returning you to the home page.'
     else
       redirect_to root_path, alert: I18n.t("omniauth_specific_error", error: params["message"])
     end
