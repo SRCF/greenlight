@@ -122,7 +122,7 @@ class SessionsController < ApplicationController
     when nil
       redirect_to root_path, alert: I18n.t("omniauth_error")
     when 'authentication_cancelled_by_user'
-      root_path, info: 'Raven login declined gracefully. Returning you to the home page.'
+      redirect_to root_path, info: 'Raven login declined gracefully. Returning you to the home page.'
     else
       redirect_to root_path, alert: I18n.t("omniauth_specific_error", error: params["message"])
     end
