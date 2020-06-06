@@ -286,12 +286,14 @@ class RoomsController < ApplicationController
   end
 
   def update_shared_files
+    verify_room_ownership_or_admin
     p = params.require(:room).permit(shared_files: [])
     @room.update!(p)
     redirect_to @room
   end
 
   def delete_shared_file
+    verify_room_ownership_or_admin
     blob = ActiveStorage::Blob.find_by(key: params[:key])
     blob.attachments.destroy_all
     blob.destroy!
