@@ -17,6 +17,9 @@
                 <tr>
                   <th>Filename</th>
                   <th>Size</th>
+                  <% if current_user.present? && (@room.owned_by?(current_user) || @shared_room) %>
+                    <th>Delete</th>
+                  <% end %>
                 </tr>
               </thead>
               <tbody id="recording-table">
@@ -29,6 +32,11 @@
                       </span>
                     </td>
                     <td><%= number_to_human_size(file.byte_size) %></td>
+                    <% if current_user.present? && (@room.owned_by?(current_user) || @shared_room) %>
+                      <td>
+    <%= link_to 'Delete', delete_shared_file_room_path(@room, key: file.blob.key), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
+                      </td>
+                    <% end %>
                   </tr>
                 <% end %>
               </tbody>

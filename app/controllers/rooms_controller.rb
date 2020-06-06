@@ -291,6 +291,13 @@ class RoomsController < ApplicationController
     redirect_to @room
   end
 
+  def delete_shared_file
+    blob = ActiveStorage::Blob.find_by(key: params[:key])
+    blob.attachments.destroy_all
+    blob.destroy!
+    redirect_to @room
+  end
+
   private
 
   def create_room_settings_string(options)

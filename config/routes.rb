@@ -129,6 +129,7 @@ Rails.application.routes.draw do
     get '/logout', to: 'rooms#logout', as: :logout_room
     post '/login', to: 'rooms#login', as: :login_room
     patch '/share', to: 'rooms#update_shared_files', as: :update_shared_files_room
+    delete '/share', to: 'rooms#delete_shared_file', as: :delete_shared_file_room
   end
 
   # Recording operations routes
