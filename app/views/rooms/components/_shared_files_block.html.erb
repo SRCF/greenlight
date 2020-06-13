@@ -40,7 +40,7 @@
                   <tr>
                     <td>
                       <span>
-                        <%= link_to(file.filename, retrieve_shared_files_path(file.key)) %>
+                        <%= link_to(file.filename, retrieve_shared_files_path(file.key), target: '_blank') %>
                         <i class="fa fa-copy ml-2 btn-file-share" data-file-share="<%= retrieve_shared_files_path(file.key) %>"></i>
                       </span>
                     </td>
