@@ -41,7 +41,7 @@
                     <td>
                       <span>
                         <%= link_to(file.filename, retrieve_shared_files_path(file.key)) %>
-                        <i class="fa fa-clipboard ml-2 btn-file-share" data-file-share="<%= retrieve_shared_files_path(file.key) %>"></i>
+                        <i class="fa fa-copy ml-2 btn-file-share" data-file-share="<%= retrieve_shared_files_path(file.key) %>"></i>
                       </span>
                     </td>
                     <td><%= number_to_human_size(file.byte_size) %></td>
