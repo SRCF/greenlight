@@ -15,7 +15,7 @@
 
 <% exceeds_limit = current_room_exceeds_limit(@room)%>
 <% if exceeds_limit%>
-  <div class="alert alert-danger alert-dismissible text-center mb-0">
+  <div class="alert alert-danger text-center mb-0">
     <%= t("room.room_limit_exceeded", difference: @diff) %>
   </div>
 <% end %>

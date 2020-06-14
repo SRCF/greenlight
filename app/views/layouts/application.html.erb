@@ -63,7 +63,7 @@
 
     <div class="wrapper">
       <% if bigbluebutton_endpoint_default? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
+        <div class="alert alert-danger text-center mb-0">
           <div class="flash alert d-inline">
             <i class="fas fa-exclamation-triangle"></i>
             <p class="d-inline"><%= t("test_install",
@@ -74,14 +74,14 @@
       <% end %>
 
       <% unless Rails.configuration.banner_message.blank? %>
-        <div class="alert alert-icon alert-warning text-center mb-0">
+        <div class="alert alert-warning text-center mb-0">
           <div class="flash alert d-inline">
             <p class="d-inline"><%= Rails.configuration.banner_message %></p>
           </div>
         </div>
       <% end %>
 
-      <div class="alert alert-icon alert-warning text-center mb-0">
+      <div class="alert alert-warning text-center mb-0">
           <div class="flash alert d-inline">
             <p class="d-inline">This is a beta service. You can help by <a target="_blank" href="https://docs.srcf.net/timeout/index.html#reporting-problems-and-getting-help">improving it.</a></p>
           </div>
