@@ -19,14 +19,6 @@
       <table id="rooms-table" class="table table-hover table-outline table-vcenter card-table">
         <thead>
           <tr>
-            <th data-header="name" data-order="<%= @order_column == "name" ? @order_direction : "none" %>">
-              <%= t("administrator.users.table.name") %>
-              <% if @order_column == "name" && @order_direction == "desc" %>
-                ↓
-              <% elsif @order_column == "name" && @order_direction == "asc" %>
-                ↑
-              <% end %>
-            </th>
             <th data-header="users.name" data-order="<%= @order_column == "users.name" ? @order_direction : "none" %>">
               <%= t("room.owner") %>
               <% if @order_column == "users.name" && @order_direction == "desc" %>

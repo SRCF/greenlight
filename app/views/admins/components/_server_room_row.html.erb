@@ -14,28 +14,11 @@
 %>
 
 <tr class="room-block" data-path="<%= update_settings_path(room) %>" data-room-settings=<%= room.room_settings %> data-room-access-code="<%= room.access_code %>">
-  <td>
-    <div id="room-title" class="edit_hover_class">
-      <% if room.id == room.owner.room_id %>
-        <i class="fas fa-home pr-1"></i>
-      <% end %>
-      <span class="room-name-text" title="<%= room.name %>">
-        <%= room.name %>
-      </span>
-    </div>
-    <div class="small text-muted">
-      <% running = room_is_running(room.bbb_id) %>
-      <% if running %>
-         <%= t("administrator.rooms.table.started", session: friendly_time(room.last_session)) %>
-      <% elsif room.last_session.present? %>
-        <%= t("administrator.rooms.table.ended", session: friendly_time(room.last_session)) %>
-      <% else %>
-        <%= [t("administrator.users.table.created"), ": ", friendly_time(room.created_at)].join %>
-      <% end %>
-    </div>
-  </td>
   <td class="text-left">
     <%= room.owner.name %>
+    <% if room.id == room.owner.room_id %>
+      <i class="fas fa-home pr-1"></i>
+    <% end %>
   </td>
   <td class="text-left">
     <%= room.uid %>
@@ -49,6 +32,16 @@
     <% else %>
       <%= t("administrator.rooms.table.not_running") %>
     <% end %>
+    <div class="small text-muted">
+      <% running = room_is_running(room.bbb_id) %>
+      <% if running %>
+         <%= t("administrator.rooms.table.started", session: friendly_time(room.last_session)) %>
+      <% elsif room.last_session.present? %>
+        <%= t("administrator.rooms.table.ended", session: friendly_time(room.last_session)) %>
+      <% else %>
+        <%= [t("administrator.users.table.created"), ": ", friendly_time(room.created_at)].join %>
+      <% end %>
+    </div>
   </td>
   <td class="text-center">
     <div class="item-action dropdown">
