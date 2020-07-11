@@ -94,7 +94,7 @@ module Joiner
       user_is_moderator: false,
       meeting_logout_url: request.base_url + logout_room_path(@room),
       meeting_recorded: @room.recording?,
-      moderator_message: "#{recording_msg}<br><br>\n\n#{invite_msg}\n\n#{request.base_url + room_path(@room)}",
+      moderator_message: "#{invite_msg}\n\n#{request.base_url + room_path(@room)}<br><br>\n\n#{recording_msg}",
       host: request.host,
       recording_default_visibility: @settings.get_value("Default Recording Visibility") == "public"
     }
