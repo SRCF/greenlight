@@ -146,6 +146,10 @@ input:focus {
   border-color: $primary !important;
 }
 
+.input-group button:focus {
+    box-shadow: none !important;
+}
+
 .list-group-item-action.active {
   color: $primary;
 }
@@ -179,4 +183,8 @@ table {
 
 #delete-confirm:disabled {
   cursor: not-allowed;
+}
+
+.btn i {
+  transition: all .15s;
 }
