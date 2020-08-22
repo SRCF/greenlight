@@ -318,13 +318,6 @@ en:
   invalid_credentials: The email and password you entered did not match our records. Try again or click Forgot Password to reset your password.
   invalid_login_method: Login failed due to account mismatch. You need to log in with omniauth.
   invite_message: 'To invite someone to the meeting, send them this link:'
-  room_recording: 
-    disabled: Recording is not available for this session.
-    enabled: "Recording is available for this session."
-    how_to_enable: You may enable it by ending this meeting and changing it under room settings.
-    how_to_disable:  "Please note that you still have to press the \"start recording\" button to begin recording. If you do not wish to record this meeting at all, you may disable it by ending this meeting and changing it under room settings."
-    info: "To learn more about how recording works, "
-    click_here: "click here."
   javascript:
     room:
       mailer:
@@ -585,7 +578,7 @@ en:
     preupload_remove_success: Successfully removed presentation
     preupload_remove_error: There was an error removing the room presentation
     recordings: Room Recordings
-    need_to_wait: Please note your recordings will not appear here instantly and the delay will be longer than the duration of your meeting.
+    need_to_wait: Please note your recordings will not appear here instantly and the delay may be longer than the duration of your meeting.
     room_limit: You have reached the maximum number of rooms allowed
     room_limit_exceeded: You have exceeded the number of rooms allowed. Please delete %{difference} room(s) to access this room.
     sessions: Sessions
