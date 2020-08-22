@@ -161,16 +161,16 @@ module Greenlight
                                          end
 
     # Default limit on number of rooms users can create
-    config.number_of_rooms_default = 15
+    config.number_of_rooms_default = 10
 
     # Allow users to share rooms by default
     config.shared_access_default = "true"
 
     # Don't require recording consent by default
-    config.require_consent_default = "false"
+    config.require_consent_default = "true"
 
     # Don't allow users to preupload presentations by default
-    config.preupload_presentation_default = "false"
+    config.preupload_presentation_default = "true"
 
     # Default admin password
     config.admin_password_default = ENV['ADMIN_PASSWORD'] || 'administrator'
