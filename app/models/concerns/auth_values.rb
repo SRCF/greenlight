@@ -40,21 +40,24 @@ module AuthValues
   end
 
   def set_lookup_values(u, response, auth)
-    # did the response fail? fall back to defaults
-    # overwrite name and email each time
-    if response.code != "200"
-      u.name = auth['uid']
-      u.email = "" unless u.email
-    else
-      json_response = JSON.parse(response.body)["result"]["person"]
-      u.name = json_response["visibleName"]
-      email_test = json_response["attributes"].try(:first)
-      u.email = email_test.present? ? email_test["value"] : "" unless u.email
+    # Try to parse the data from Lookup if we can
+    if response.code == "200"
+      hash = JSON.parse(response.body)
+      data = hash["result"] && hash["result"]["person"]
+      return unless data
+      u.name ||= data["visibleName"]
+      u.email ||= data["attributes"].try(:first).try(:fetch, "value") || ""
     end
-    u.username = auth['uid'] unless u.username
+    
+    # Set some defaults in case the Lookup API call failed
+    u.name ||= auth['uid']
+    u.username ||= auth['uid']
+    u.email ||= ""
+    
+    # Enforce that the image field be a blank string
     u.image = ""
   end
-  
+
   # Provider attributes.
   def auth_name(auth)
     case auth['provider']
