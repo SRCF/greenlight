@@ -44,9 +44,10 @@ module AuthValues
     if response.code == "200"
       hash = JSON.parse(response.body)
       data = hash["result"] && hash["result"]["person"]
-      return unless data
-      u.name ||= data["visibleName"]
-      u.email ||= data["attributes"].try(:first).try(:fetch, "value") || ""
+      if data
+        u.name ||= data["visibleName"]
+        u.email ||= data["attributes"].try(:first).try(:fetch, "value") || ""
+      end
     end
     
     # Set some defaults in case the Lookup API call failed
